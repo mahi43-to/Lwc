@@ -1,0 +1,16 @@
+p{
+    color: blueviolet;
+    font-size: 20px;
+    border: 1px dotted black;
+    border-radius: 6px;
+}
+
+.user {
+    color: yellowgreen;
+    font-size: 10px;
+    background-color: whitesmoke;
+}
+.user:hover {
+    font-size: 20px;
+    background-color: white;
+}

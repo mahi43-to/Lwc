@@ -1,0 +1,42 @@
+<template>
+    <lightning-card title="Quiz App">
+        <div class="slds-var-m-around_medium">
+            
+            <form>
+                <template for:each={myQuestions} for:item="quiz">
+                    <div key={quiz.Id}>
+                        <div><strong>{quiz.Id} - {quiz.Question}</strong></div>
+                        <!-- <lightning-radio-group name="radioGroup" label="Radio Group" options={quiz.Options}></lightning-radio-group> -->
+                        <div class="slds-grid slds-grid_vertical-align-end slds-gutters slds-var-m-around_large">
+                            <div class="slds-col">
+                                <input type="radio" disabled={isAlreadySelected} class="slds-var-m-right_small" name={quiz.Id} value="a"
+                                    onchange={changeHandler} />
+                                {quiz.Options.a}
+                            </div>
+                            <div class="slds-col">
+                                <input type="radio" disabled={isAlreadySelected} class="slds-var-m-right_small" name={quiz.Id} value="b"
+                                    onchange={changeHandler} />
+                                {quiz.Options.b}
+                            </div>
+                            <div class="slds-col">
+                                <input type="radio" disabled={isAlreadySelected} class="slds-var-m-right_small" name={quiz.Id} value="c"
+                                    onchange={changeHandler} />
+                                {quiz.Options.c}
+                            </div>
+                            <div class="slds-col">
+                                <input type="radio" disabled={isAlreadySelected} class="slds-var-m-right_small" name={quiz.Id} value="d" onchange={changeHandler} />
+                                {quiz.Options.d}
+                            </div>
+                        </div>
+                    </div>
+                </template>
+                <lightning-button variant="brand" type="submit" disabled={allAnsAreNotSelected} title="quiz submit" label="submit" onclick={submitHandler} class="slds-m-around_medium"></lightning-button>
+                <lightning-button variant="brand" type="reset" title="quiz reset" label="reset" onclick={resetHandler} class="slds-m-around_medium"></lightning-button>
+
+            </form>
+            <template if:true={isSubmitted}>
+                <div class={isScoredFull}>you have scored {correctAnswers} out of {myQuestions.length}</div>
+           </template>
+        </div>
+    </lightning-card>
+</template>
