@@ -1,0 +1,58 @@
+<template>
+    <lightning-card title="Create Records using lightning-record form">
+        <div class="slds-var-m-around_medium">
+            <lightning-record-form 
+            object-api-name={objectName}
+            fields={fieldList}
+            onsuccess={successHandler}></lightning-record-form>
+        </div>
+    </lightning-card>
+    <div class="slds-var-m-around_medium"></div>
+    <lightning-card title="Display Records using lightning-record form">
+        <div class="slds-var-m-around_medium">
+            <lightning-record-form 
+            record-id="0010w00000wN7UYAA0"
+            object-api-name={objectName}
+            fields={fieldList}
+           ></lightning-record-form>
+        </div>
+    </lightning-card>
+
+    <div class="slds-var-m-around_medium"></div>
+    <lightning-card title="Display Records in readOnly mode using lightning-record form">
+        <div class="slds-var-m-around_medium">
+            <lightning-record-form 
+            record-id="0010w00000wN7UYAA0"
+            object-api-name={objectName}
+            mode="readonly"
+            fields={fieldList}
+           ></lightning-record-form>
+        </div>
+    </lightning-card>
+
+    <div class="slds-var-m-around_medium"></div>
+    <lightning-card title="Edit Records in using lightning-record form">
+        <div class="slds-var-m-around_medium">
+            <lightning-record-form 
+            record-id="0010w00000wN7UYAA0"
+            object-api-name={objectName}
+            mode="edit"
+            fields={fieldList}
+            columns="2"
+           ></lightning-record-form>
+        </div>
+    </lightning-card>
+<!-- at line 54 we can also go with layout-type="Full" -->
+    <div class="slds-var-m-around_medium"></div>
+    <lightning-card title="with layout in using lightning-record form">
+        <div class="slds-var-m-around_medium">
+            <lightning-record-form 
+            record-id={recordId}
+            object-api-name={objectApiName}
+            mode="edit"
+            columns="2"
+            layout-type="Compact"
+            ></lightning-record-form>
+        </div>
+    </lightning-card>
+</template>
