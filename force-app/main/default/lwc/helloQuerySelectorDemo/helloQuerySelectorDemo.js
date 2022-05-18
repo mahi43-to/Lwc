@@ -1,4 +1,4 @@
-import { LightningElement } from 'lwc';
+import { LightningElement, track} from 'lwc';
 
 export default class HelloQuerySelectorDemo extends LightningElement {
     userName = ["jhon", "smith", "luke", "raj"];
